@@ -10,36 +10,37 @@ const voice4Checkbox = document.getElementById('voice4');
 
 const playButton = document.getElementById('playButton');
 
-playButton.addEventListener('click', () => {
-  if (voice1Checkbox.checked) voice1.play();
-  if (voice2Checkbox.checked) voice2.play();
-  if (voice3Checkbox.checked) voice3.play();
-  if (voice4Checkbox.checked) voice4.play();
-});
-
-function toggleVoice(voiceCheckbox, voice) {
-  if (voiceCheckbox.checked) {
-    voice.currentTime = voice1.currentTime;
-    voice.play();
-  } else {
-    voice.pause();
-  }
+function playVoices() {
+  voice1.play();
+  voice2.play();
+  voice3.play();
+  voice4.play();
 }
 
+function muteVoice(voice, shouldMute) {
+  voice.muted = shouldMute;
+}
+
+playButton.addEventListener('click', () => {
+  if (voice1.paused) {
+    playVoices();
+  }
+});
+
 voice1Checkbox.addEventListener('change', () => {
-  toggleVoice(voice1Checkbox, voice1);
+  muteVoice(voice1, !voice1Checkbox.checked);
 });
 
 voice2Checkbox.addEventListener('change', () => {
-  toggleVoice(voice2Checkbox, voice2);
+  muteVoice(voice2, !voice2Checkbox.checked);
 });
 
 voice3Checkbox.addEventListener('change', () => {
-  toggleVoice(voice3Checkbox, voice3);
+  muteVoice(voice3, !voice3Checkbox.checked);
 });
 
 voice4Checkbox.addEventListener('change', () => {
-  toggleVoice(voice4Checkbox, voice4);
+  muteVoice(voice4, !voice4Checkbox.checked);
 });
 
 voice1.addEventListener('ended', () => {
