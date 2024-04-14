@@ -4,6 +4,8 @@ Welcome to the BWV 269 Audio Mixer, an interactive web app that lets you dive in
 
 [Try it here.](https://uli.hitzel.net/BWV-269-Audio-Mixer/)
 
+![](app.png)
+
 ## Motivation
 
 As a lover of Bach's music, I wanted to find a way to break down the complex harmonies of his chorales into their individual voices. By assigning each voice a distinctive instrument and progressively building them back up, I believed it would be easier to identify and understand how each voice contributes to the overall polyphonic structure.
